@@ -6,7 +6,7 @@ const fileName = 'style.css';
 
 module.exports = class {
   async data () {
-    const rawFilepath = path.join(__dirname, `../_includes/assets/css/${fileName}`);
+    const rawFilepath = path.join(__dirname, `assets/css/${fileName}`);
     return {
       permalink: `assets/css/${fileName}`,
       rawFilepath,
@@ -16,8 +16,9 @@ module.exports = class {
 
   async render ({ rawCss, rawFilepath }) {
     return await postcss([
-      require('precss'),
       require('postcss-import'),
+      require('postcss-omit-import-tilde'),
+      require('precss'),
       require('cssnano')
     ])
       .process(rawCss, { from: rawFilepath })

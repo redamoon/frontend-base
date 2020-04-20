@@ -21,4 +21,5 @@
   --element-margin: 30px;
 
   --round-font: 'M PLUS Rounded 1c', 'Nunito', sans-serif;
+  user-select: none;
 }

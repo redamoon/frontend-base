@@ -1,0 +1,10 @@
+@import 'normalize.css';
+@import '_variable.css';
+
+body {
+  background: #FFF;
+}
+
+.card {
+  position: relative;
+}
