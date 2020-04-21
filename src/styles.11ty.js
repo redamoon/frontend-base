@@ -18,6 +18,8 @@ module.exports = class {
     return await postcss([
       require('postcss-import'),
       require('postcss-omit-import-tilde'),
+      require('postcss-nested'),
+      require('postcss-simple-vars'),
       require('precss'),
       require('cssnano')
     ])
